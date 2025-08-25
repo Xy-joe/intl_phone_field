@@ -21,6 +21,7 @@ class PickerDialogStyle {
   final InputDecoration? searchFieldInputDecoration;
 
   final EdgeInsets? searchFieldPadding;
+  final TextStyle? searchFieldTextStyle;
 
   final double? width;
 
@@ -35,6 +36,7 @@ class PickerDialogStyle {
     this.searchFieldInputDecoration,
     this.searchFieldPadding,
     this.width,
+    this.searchFieldTextStyle,
   });
 }
 
@@ -103,6 +105,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
                       suffixIcon: const Icon(Icons.search),
                       labelText: widget.searchText,
                     ),
+                style: widget.style?.searchFieldTextStyle,
                 onChanged: (value) {
                   _filteredCountries = widget.countryList.stringSearch(value)
                     ..sort(
